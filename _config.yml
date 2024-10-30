@@ -23,7 +23,7 @@ subtitle                 : # site tagline that appears below site title in masth
 name                     : "Shri Vishalini Rajaram"
 description              : "Oral Microbiome | Toxicoinformatics | Multi-Omics | Machine learning for Biology"
 url                      : "https://www.rajaramshrivishalini.com"
-baseurl                  : # the subpath of your site, e.g. "/blog"
+baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : shrivishalinirajaram/rajaramshrivishalini.github.io
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"

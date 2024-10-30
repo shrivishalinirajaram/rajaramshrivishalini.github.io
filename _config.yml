@@ -22,7 +22,7 @@ title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Shri Vishalini Rajaram"
 description              : "Oral Microbiome | Toxicoinformatics | Multi-Omics | Machine learning for Biology"
-url                      : https://www.rajaramshrivishalini.com
+url                      : "https://www.rajaramshrivishalini.com"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : shrivishalinirajaram/rajaramshrivishalini.github.io
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"

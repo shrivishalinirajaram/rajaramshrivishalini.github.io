@@ -1,41 +1,77 @@
-/* Hero Section */
+/* General Body Styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #1a1a1a;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
 .hero {
   text-align: center;
-  padding: 100px 20px;
-  background: linear-gradient(135deg, #2c3e50, #3498db);
-  color: white;
-  position: relative;
+  overflow: hidden;
 }
 
 .hero h1 {
-  font-size: 3em;
-  margin-bottom: 20px;
-  animation: fadeIn 2s;
+  font-size: 4rem;
+  font-weight: bold;
+  margin: 0;
+  display: inline-block;
+  position: relative;
+  animation: moveUp 1.5s ease-out forwards;
 }
 
-.slides {
-  position: relative;
+/* Static "I’m" Text */
+#static-text {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* Rotating Gradient Text */
+#rotating-text {
+  display: inline-block;
+  background: linear-gradient(45deg, #3498db, #e74c3c, #2ecc71, #f1c40f);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradientShift 3s infinite linear;
+}
+
+/* Roles Section */
+.roles {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  color: #ecf0f1;
   height: 40px;
   overflow: hidden;
-  display: inline-block;
 }
 
-.slide {
-  font-size: 1.5em;
-  animation: slideUp 8s infinite;
-  color: #ecf0f1;
+.roles p {
+  margin: 0;
+  animation: fadeRole 3s infinite;
 }
 
-@keyframes slideUp {
-  0%, 25% { transform: translateY(0); opacity: 1; }
-  50%, 75% { transform: translateY(-40px); opacity: 0; }
-  100% { transform: translateY(-80px); opacity: 0; }
+/* Animations */
+@keyframes gradientShift {
+  0% { background-position: 0%; }
+  100% { background-position: 200%; }
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+@keyframes fadeRole {
+  0%, 25% { opacity: 0; transform: translateY(30px); }
+  50%, 75% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-30px); }
 }
+
+@keyframes moveUp {
+  from { transform: translateY(100px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
 
 /* Introduction Section */
 .introduction {

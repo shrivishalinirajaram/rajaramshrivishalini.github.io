@@ -2,8 +2,8 @@
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    color: #333;
-    background-color: #f9f9f9;
+    color: #f5f5f5;
+    background-color: #1c1c1c;
     overflow-x: hidden;
 }
 
@@ -11,9 +11,8 @@ body {
     position: fixed;
     width: 100%;
     top: 0;
-    background-color: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(90deg, #3b3b3b, #1e1e1e);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     z-index: 1000;
 }
 
@@ -23,80 +22,188 @@ body {
     padding: 10px 20px;
     display: flex;
     justify-content: center;
-    gap: 20px;
-}
-
-.header ul li {
-    margin: 0;
+    gap: 30px;
 }
 
 .header ul li a {
     text-decoration: none;
-    color: #333;
-    font-size: 1.1rem;
+    color: #f5f5f5;
+    font-size: 1.2rem;
+    font-weight: bold;
     transition: color 0.3s;
 }
 
 .header ul li a:hover {
-    color: #00796b;
+    color: #ffb74d;
 }
 
+/* Layout and Alignment Fixes */
 .hero {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #ffecd2, #fcb69f);
+    background: linear-gradient(135deg, #2c2c2c, #1e1e1e);
     text-align: center;
+    color: #f5f5f5;
+    flex-direction: column;
     padding: 20px;
-    overflow: hidden;
+    gap: 20px; /* Equal spacing between elements */
 }
 
 .hero-content h1 {
-    font-size: 3rem;
-    margin: 0;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeUp 0.6s ease-in-out forwards;
+    font-size: 2.5rem;
+    color: #E4C59E;
+    margin: 0; /* Remove extra margins */
 }
 
-.hero-content h2 {
-    font-size: 2rem;
-    margin: 10px 0;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeUp 0.6s ease-in-out 0.4s forwards;
+.hero-content .hero-name {
+    font-size: 4rem;
+    font-weight: bold;
+    color: transparent;
+    -webkit-text-stroke: 2px #FFF5E0;
+    text-transform: none;
+    display: inline-block;
+    margin: 20px 0; /* Add consistent spacing */
 }
 
-.hero-content p {
-    font-size: 1.2rem;
-    margin: 20px 0;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeUp 0.6s ease-in-out 0.8s forwards;
+.hero-content .hero-name span.word {
+    margin-right: 15px; /* Proper word spacing */
 }
 
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.hero-content .hero-role {
+    font-size: 1.8rem;
+    font-family: 'Courier New', Courier, monospace;
+    color: #FFF5E0;
+    margin-top: 10px; /* Balanced spacing */
 }
 
+/* Introduction Section */
+.introduction {
+    text-align: justify;
+    padding: 50px 20px;
+    background: #f5f5f5; /* Light background */
+    color: #1c1c1c; /* Black text */
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.introduction h2 {
+    font-size: 2.5rem;
+    color: #1c1c1c; /* Black heading */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.introduction .cta-buttons {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.introduction .cta-buttons .button {
+    background: #E4C59E;
+    color: #1c1c1c;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.introduction .cta-buttons .button:hover {
+    background: #FFF5E0;
+}
+
+/* Blocks Section */
+.blocks {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 50px 20px;
+    background-color: #f5f5f5;
+    color: #1c1c1c;
+    gap: 20px;
+}
+
+.block {
+    background: #E4C59E;
+    padding: 20px 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.block a {
+    text-decoration: none;
+    color: #1c1c1c;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.block:hover {
+    transform: translateY(-10px);
+    background: #FFF5E0;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 10px;
+    background: #1c1c1c; /* Black background */
+    color: #FFF5E0; /* Light text */
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 0;
+    margin: 10px 0 0;
+}
+
+footer ul li {
+    display: inline-block;
+}
+
+footer ul li a {
+    color: #FFF5E0;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    color: #E4C59E; /* Add hover effect */
+}
+
+footer ul li a img {
+    width: 30px;
+    height: auto;
+    vertical-align: middle;
+}
+
+footer ul li a i {
+    font-size: 1.8rem; /* Adjust icon size */
+}
+
+/* Ensure Responsive Design */
 @media (max-width: 768px) {
     .hero-content h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
-    .hero-content h2 {
-        font-size: 1.8rem;
+    .hero-content .hero-name {
+        font-size: 3rem;
     }
 
-    .hero-content p {
-        font-size: 1rem;
+    .hero-content .hero-role {
+        font-size: 1.2rem;
     }
 }
+

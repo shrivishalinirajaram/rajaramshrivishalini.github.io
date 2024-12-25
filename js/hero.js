@@ -1,16 +1,35 @@
+// scripts.js
 document.addEventListener('DOMContentLoaded', () => {
-  const roles = [
-    "Computational Biologist",
-    "Oral Microbiome Researcher",
-    "Toxicologist",
-    "Science Communicator"
-  ];
+    const heroContent = document.querySelector('.hero-content');
+    const lines = heroContent.querySelectorAll('h1, h2, p');
 
-  let roleIndex = 0;
-  const roleElement = document.querySelector('.dynamic-role');
+    lines.forEach((line, index) => {
+        line.style.opacity = 0;
+        line.style.transform = 'translateY(20px)';
+        line.style.transition = `opacity 0.6s ease-in-out ${index * 0.4}s, transform 0.6s ease-in-out ${index * 0.4}s`;
+    });
 
-  setInterval(() => {
-    roleElement.textContent = roles[roleIndex];
-    roleIndex = (roleIndex + 1) % roles.length;
-  }, 3000);
+    setTimeout(() => {
+        lines.forEach((line) => {
+            line.style.opacity = 1;
+            line.style.transform = 'translateY(0)';
+        });
+    }, 100);
+
+    // Mousemove parallax effect
+    const hero = document.querySelector('.hero');
+    hero.addEventListener('mousemove', (e) => {
+        const { clientX, clientY } = e;
+        const { innerWidth, innerHeight } = window;
+        const offsetX = (clientX / innerWidth - 0.5) * 20;
+        const offsetY = (clientY / innerHeight - 0.5) * 20;
+
+        heroContent.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+        heroContent.style.transition = 'transform 0.1s ease-out';
+    });
+
+    hero.addEventListener('mouseleave', () => {
+        heroContent.style.transform = 'translate(0, 0)';
+        heroContent.style.transition = 'transform 0.3s ease-in-out';
+    });
 });

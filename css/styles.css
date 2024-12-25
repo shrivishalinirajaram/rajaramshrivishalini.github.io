@@ -1,61 +1,64 @@
 /* General Styles */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f4f5f7; /* Light background */
-  color: #2c3e50; /* Dark muted text */
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  color: #2c3e50;
 }
 
 /* Header */
 .header {
-  background-color: #34495e; /* Dark blue-gray */
-  padding: 10px 20px;
+  background-color: #2c3e50;
+  padding: 10px 0;
 }
 
 .header ul {
   display: flex;
   justify-content: center;
   list-style: none;
-  gap: 20px;
   padding: 0;
+  margin: 0;
 }
 
-.header li a {
-  color: #ecf0f1; /* Light gray */
+.header li {
+  margin: 0 15px;
+}
+
+.header a {
+  color: #ffffff;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s ease;
 }
 
-.header li a:hover {
-  color: #1abc9c; /* Calm teal */
+.header a:hover {
+  color: #81C784;
 }
 
 /* Hero Section */
 .hero {
   text-align: center;
   padding: 100px 20px;
-  background: linear-gradient(135deg, #34495e, #2c3e50);
+  background: linear-gradient(135deg, #5D99C6, #2c3e50);
   color: white;
 }
 
 .hero h1 {
-  font-size: 3.5rem;
+  font-size: 3rem;
 }
 
 .hero .highlight {
-  color: #1abc9c;
+  color: #FFD54F;
 }
 
 .hero .dynamic-role {
-  font-size: 1.5rem;
-  margin-top: 10px;
-  animation: fadeIn 2s infinite alternate;
+  font-size: 1.2rem;
+  animation: fadeIn 3s infinite alternate;
 }
 
+/* Animations */
 @keyframes fadeIn {
   from {
-    opacity: 0.5;
+    opacity: 0.6;
   }
   to {
     opacity: 1;
@@ -65,37 +68,21 @@ body {
 /* Introduction Section */
 .introduction {
   background-color: white;
+  border-radius: 8px;
   padding: 30px;
-  border-radius: 10px;
-  margin: 40px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: justify;
 }
 
 .introduction h2 {
   text-align: center;
-  font-size: 2rem;
-  color: #2c3e50;
   margin-bottom: 20px;
 }
 
 .introduction p {
-  font-size: 1.2rem;
-  color: #4d4d4d;
-}
-
-.introduction .btn {
-  display: inline-block;
-  margin-top: 20px;
-  background-color: #1abc9c;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-}
-
-.introduction .btn:hover {
-  background-color: #16a085;
+  margin-bottom: 20px;
+  line-height: 1.6;
 }
 
 /* Blocks Section */
@@ -103,56 +90,42 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
-  padding: 40px;
+  padding: 30px;
 }
 
 .block {
-  text-align: center;
-  padding: 30px;
-  background-color: #3498db;
+  padding: 20px;
   color: white;
+  text-align: center;
   border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .block:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.block:nth-child(2) {
-  background-color: #e67e22; /* Science Communication */
-}
-
-.block:nth-child(3) {
-  background-color: #9b59b6; /* Decoding Concepts */
-}
-
-.block:nth-child(4) {
-  background-color: #2ecc71; /* Curiosity Hub */
+  transform: scale(1.05);
 }
 
 /* Footer */
 footer {
   background-color: #2c3e50;
   color: white;
-  text-align: center;
   padding: 20px;
+  text-align: center;
 }
 
 footer .social-links {
   display: flex;
   justify-content: center;
-  list-style: none;
   gap: 15px;
   margin-top: 10px;
 }
 
-footer .social-links li a i {
-  font-size: 1.5rem;
-  color: #ecf0f1;
+footer .social-links img,
+footer .social-links i {
+  width: 24px;
+  height: 24px;
 }
 
-footer .social-links li a:hover i {
-  color: #1abc9c;
+footer .social-links img {
+  object-fit: contain;
 }

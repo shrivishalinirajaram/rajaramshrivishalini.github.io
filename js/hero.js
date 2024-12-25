@@ -2,18 +2,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const roles = [
     "Computational Biologist",
     "Oral Microbiome Researcher",
-    "Computational Toxicologist",
+    "Toxicologist",
     "Science Communicator"
   ];
+
   let roleIndex = 0;
+  const roleElement = document.querySelector('.dynamic-role');
 
-  const roleElement = document.getElementById('role');
-
-  function updateRole() {
+  setInterval(() => {
     roleElement.textContent = roles[roleIndex];
-    roleIndex = (roleIndex + 1) % roles.length; // Loop through roles
-  }
-
-  setInterval(updateRole, 3000); // Change every 3 seconds
+    roleIndex = (roleIndex + 1) % roles.length;
+  }, 3000);
 });
-

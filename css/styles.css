@@ -1,37 +1,64 @@
-/* General Body Styles */
+/* General Styles */
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
   background-color: #1a1a1a;
   color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  overflow: hidden;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Header */
+.header {
+  background-color: #333;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.header ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.header li {
+  display: inline;
+}
+
+.header a {
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.header a:hover {
+  color: #3498db;
+}
+
+/* Hero Section */
 .hero {
   text-align: center;
+  padding: 150px 20px;
+  background: linear-gradient(135deg, #2c3e50, #3498db);
+  color: white;
   overflow: hidden;
 }
 
 .hero h1 {
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: bold;
-  margin: 0;
-  display: inline-block;
-  position: relative;
-  animation: moveUp 1.5s ease-out forwards;
+  margin-bottom: 20px;
 }
 
-/* Static "I’m" Text */
-#static-text {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-/* Rotating Gradient Text */
 #rotating-text {
   display: inline-block;
   background: linear-gradient(45deg, #3498db, #e74c3c, #2ecc71, #f1c40f);
@@ -41,12 +68,11 @@ body {
   animation: gradientShift 3s infinite linear;
 }
 
-/* Roles Section */
 .roles {
   margin-top: 20px;
   font-size: 1.5rem;
   color: #ecf0f1;
-  height: 40px;
+  height: 40px; /* Fixed height for smooth transitions */
   overflow: hidden;
 }
 
@@ -55,35 +81,17 @@ body {
   animation: fadeRole 3s infinite;
 }
 
-/* Animations */
-@keyframes gradientShift {
-  0% { background-position: 0%; }
-  100% { background-position: 200%; }
-}
-
-@keyframes fadeRole {
-  0%, 25% { opacity: 0; transform: translateY(30px); }
-  50%, 75% { opacity: 1; transform: translateY(0); }
-  100% { opacity: 0; transform: translateY(-30px); }
-}
-
-@keyframes moveUp {
-  from { transform: translateY(100px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-
 /* Introduction Section */
 .introduction {
   text-align: center;
   padding: 50px 20px;
   background-color: #f9f9f9;
+  color: #333;
 }
 
 .introduction h2 {
   color: #2c3e50;
   font-size: 2em;
-  margin-bottom: 20px;
 }
 
 .introduction p {
@@ -119,7 +127,7 @@ body {
 
 .block {
   text-align: center;
-  padding: 50px 20px;
+  padding: 30px;
   color: white;
   border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -136,10 +144,10 @@ body {
 }
 
 .block h3 {
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
-/* Footer Section */
+/* Footer */
 footer {
   text-align: center;
   padding: 20px;
@@ -184,3 +192,14 @@ footer p {
   color: #3498db;
 }
 
+/* Animations */
+@keyframes gradientShift {
+  0% { background-position: 0%; }
+  100% { background-position: 200%; }
+}
+
+@keyframes fadeRole {
+  0%, 25% { opacity: 0; transform: translateY(30px); }
+  50%, 75% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-30px); }
+}

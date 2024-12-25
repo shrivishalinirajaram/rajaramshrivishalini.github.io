@@ -6,17 +6,6 @@ body {
   color: white;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
 /* Header */
 .header {
   background-color: #333;
@@ -28,6 +17,7 @@ ul {
   display: flex;
   justify-content: center;
   gap: 20px;
+  list-style: none;
 }
 
 .header li {
@@ -37,6 +27,7 @@ ul {
 .header a {
   color: white;
   font-weight: bold;
+  text-decoration: none;
   transition: color 0.3s ease;
 }
 
@@ -44,49 +35,43 @@ ul {
   color: #3498db;
 }
 
-/* Hero Section */
-.hero {
-  text-align: center;
-  padding: 150px 20px;
-  background: linear-gradient(135deg, #2c3e50, #3498db);
-  color: white;
-  overflow: hidden;
+/* Main Content */
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 50px;
+  gap: 20px;
 }
 
+.left-column {
+  flex: 3;
+  max-width: 600px;
+}
+
+.right-column {
+  flex: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+/* Hero Section */
 .hero h1 {
   font-size: 3.5rem;
   font-weight: bold;
-  margin-bottom: 20px;
-}
-
-#rotating-text {
-  display: inline-block;
-  background: linear-gradient(45deg, #3498db, #e74c3c, #2ecc71, #f1c40f);
-  background-size: 200%;
-  -webkit-background-clip: text;
-  color: transparent;
-  animation: gradientShift 3s infinite linear;
-}
-
-.roles {
-  margin-top: 20px;
-  font-size: 1.5rem;
-  color: #ecf0f1;
-  height: 40px; /* Fixed height for smooth transitions */
-  overflow: hidden;
-}
-
-.roles p {
   margin: 0;
-  animation: fadeRole 3s infinite;
+}
+
+.hero .dynamic-role {
+  font-size: 1.5rem;
+  color: #3498db;
+  margin-top: 10px;
 }
 
 /* Introduction Section */
 .introduction {
-  text-align: center;
-  padding: 50px 20px;
-  background-color: #f9f9f9;
-  color: #333;
+  margin-top: 20px;
 }
 
 .introduction h2 {
@@ -97,8 +82,7 @@ ul {
 .introduction p {
   font-size: 1.2em;
   line-height: 1.6;
-  margin: 0 auto;
-  max-width: 700px;
+  color: #ecf0f1;
 }
 
 .introduction .btn {
@@ -117,33 +101,27 @@ ul {
   background-color: #2c3e50;
 }
 
-/* Blocks Section */
-.blocks {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  padding: 50px 20px;
-}
-
-.block {
+/* Right Column Blocks */
+.right-column .block {
   text-align: center;
   padding: 30px;
   color: white;
+  background-color: #444;
   border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.block a {
+.right-column .block a {
   text-decoration: none;
   color: white;
 }
 
-.block:hover {
+.right-column .block:hover {
   transform: translateY(-10px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.block h3 {
+.right-column .block h3 {
   font-size: 1.2em;
 }
 
@@ -159,7 +137,7 @@ footer p {
   margin-bottom: 10px;
 }
 
-.social-links {
+footer .social-links {
   list-style: none;
   padding: 0;
   display: flex;
@@ -167,39 +145,47 @@ footer p {
   gap: 15px;
 }
 
-.social-links li {
+footer .social-links li {
   display: inline-block;
 }
 
-.social-links a {
+footer .social-links a {
   text-decoration: none;
 }
 
-.social-links a i, .social-links a img {
+footer .social-links a i,
+footer .social-links a img {
   font-size: 1.5rem;
   width: 24px;
   height: 24px;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.social-links a img.icon {
+footer .social-links a img.icon {
   width: 24px; /* ORCID logo size */
   height: auto;
 }
 
-.social-links a:hover i, .social-links a:hover img {
+footer .social-links a:hover i,
+footer .social-links a:hover img {
   transform: scale(1.2);
   color: #3498db;
 }
 
-/* Animations */
-@keyframes gradientShift {
-  0% { background-position: 0%; }
-  100% { background-position: 200%; }
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .left-column,
+  .right-column {
+    flex: 1;
+    max-width: 100%;
+  }
+
+  .right-column {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
 }
 
-@keyframes fadeRole {
-  0%, 25% { opacity: 0; transform: translateY(30px); }
-  50%, 75% { opacity: 1; transform: translateY(0); }
-  100% { opacity: 0; transform: translateY(-30px); }
-}

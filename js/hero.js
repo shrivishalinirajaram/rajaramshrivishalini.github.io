@@ -82,3 +82,35 @@ document.addEventListener('DOMContentLoaded', () => {
         heroContent.style.transition = 'transform 0.3s ease-in-out';
     });
 });
+document.addEventListener('DOMContentLoaded', () => {
+    // Hero section existing functionality (retain your original code here)
+
+    // Fade-in effect for contribution blocks
+    const blocks = document.querySelectorAll('.block');
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in');
+                observer.unobserve(entry.target); // Trigger only once
+            }
+        });
+    }, { threshold: 0.5 });
+
+    blocks.forEach(block => {
+        observer.observe(block);
+    });
+
+    // Smooth scroll effect for internal links (optional future feature)
+    const links = document.querySelectorAll('a[href^="#"]');
+    links.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = document.querySelector(link.getAttribute('href'));
+            target.scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+});
+

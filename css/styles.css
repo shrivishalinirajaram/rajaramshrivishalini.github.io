@@ -150,6 +150,163 @@ body {
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Hero Section for Journey */
+.journey-hero {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1c1c1c, #2c2c2c);
+    color: #FFF5E0;
+    text-align: center;
+    padding: 20px;
+}
+
+.journey-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.journey-hero .tagline {
+    font-size: 1.8rem;
+    font-style: italic;
+    color: #E4C59E;
+    margin-bottom: 20px;
+}
+
+/* Timeline Section */
+.timeline {
+    background: #f5f5f5;
+    padding: 50px 20px;
+    color: #1c1c1c;
+}
+
+.timeline h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.timeline-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.timeline-year {
+    background: #FFF5E0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-year h3 {
+    font-size: 2rem;
+    color: #E4C59E;
+    margin-bottom: 10px;
+}
+
+.timeline-year ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.timeline-year li {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+/* Hero Section for Science Communication */
+.science-hero {
+    height: auto; /* Adjust height to fit content */
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #1c1c1c, #2c2c2c); /* Dark background */
+    color: #FFF5E0;
+    text-align: center;
+}
+
+.science-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.science-hero .tagline {
+    font-size: 1.8rem;
+    font-style: italic;
+    color: #E4C59E; /* Soft gold tone for tagline */
+    margin-bottom: 20px;
+}
+
+.science-hero p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #FFF5E0; /* Light text color */
+    text-align: justify;
+    max-width: 800px;
+    margin: 0 auto 20px;
+}
+
+/* Contributions Section */
+.contributions {
+    padding: 50px 20px;
+    background: #f5f5f5; /* Light background for contrast */
+    color: #1c1c1c; /* Dark text */
+    text-align: center;
+}
+
+.contributions h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #1c1c1c;
+}
+
+.contribution-blocks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.block {
+    background: #FFF5E0; /* Soft tone for blocks */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.block:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.block img {
+    max-width: 100%;
+    height: 180px; /* Consistent height for thumbnails */
+    object-fit: cover; /* Ensures image fits without distortion */
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.block h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.block p {
+    font-size: 0.9rem;
+    color: #555; /* Slightly muted text for descriptions */
+}
+
 /* Footer */
 footer {
     text-align: center;

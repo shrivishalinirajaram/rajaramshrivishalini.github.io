@@ -114,3 +114,93 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const timelineData = {
+        2024: {
+            January: [{ icon: "💵", text: "Raised $2,932.00 Chapter Development Grant for Connecting Science to Society." }],
+            February: [{ icon: "📢", text: "1st Place Award for Oral presentation on Oral Mycobiome." }],
+            March: [{ icon: "📢", text: "Oral presentation at IADR General Session, New Orleans, LA." }],
+        },
+        2023: {
+            October: [{ icon: "📢", text: "Poster Presentation on drug-induced liver injury biomarkers." }],
+        },
+    };
+
+    const months = [
+        "December", "November", "October", "September", "August", "July",
+        "June", "May", "April", "March", "February", "January"
+    ];
+
+    const years = document.querySelectorAll('.journey-year');
+    const verticalTimeline = document.querySelector('.journey-vertical-timeline');
+
+    function clearActiveYears() {
+        years.forEach((year) => year.classList.remove('active'));
+    }
+
+    function loadMonths(year) {
+        verticalTimeline.innerHTML = ''; // Clear previous months
+        const yearData = timelineData[year];
+        let sideToggle = true; // Toggle between left and right for events
+
+        const startMarker = document.createElement('div');
+        startMarker.classList.add('timeline-end-marker', 'start');
+        verticalTimeline.appendChild(startMarker);
+
+        months.forEach((month, index) => {
+            const monthElement = document.createElement('div');
+            monthElement.classList.add('journey-month');
+            monthElement.textContent = month;
+
+            // Position the month dynamically
+            monthElement.style.top = `${index * 80}px`; // Adjust spacing dynamically
+
+            if (yearData && yearData[month]) {
+                monthElement.classList.add('active');
+
+                const eventsContainer = document.createElement('div');
+                eventsContainer.classList.add('journey-event-container', sideToggle ? 'left' : 'right');
+                eventsContainer.style.top = `${index * 80}px`; // Align with the month
+
+                yearData[month].forEach((event) => {
+                    const eventElement = document.createElement('div');
+                    eventElement.classList.add('journey-event');
+                    eventElement.innerHTML = `<span class="icon">${event.icon}</span>${event.text}`;
+                    eventsContainer.appendChild(eventElement);
+                });
+
+                sideToggle = !sideToggle;
+
+                verticalTimeline.appendChild(monthElement);
+                verticalTimeline.appendChild(eventsContainer);
+            } else {
+                monthElement.classList.add('inactive');
+                verticalTimeline.appendChild(monthElement);
+            }
+        });
+
+        const endMarker = document.createElement('div');
+        endMarker.classList.add('timeline-end-marker', 'end');
+        verticalTimeline.appendChild(endMarker);
+    }
+
+    function loadDefaultYear() {
+        const defaultYear = '2024';
+        const defaultYearElement = document.querySelector(`.journey-year[data-year="${defaultYear}"]`);
+        if (defaultYearElement) {
+            defaultYearElement.click();
+        }
+    }
+
+    years.forEach((yearElement) => {
+        yearElement.addEventListener('click', () => {
+            const year = yearElement.dataset.year;
+
+            clearActiveYears();
+            yearElement.classList.add('active');
+            loadMonths(year);
+        });
+    });
+
+    loadDefaultYear();
+});

@@ -1,0 +1,367 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #f5f5f5;
+    background-color: #1c1c1c;
+    overflow-x: hidden;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: linear-gradient(90deg, #3b3b3b, #1e1e1e);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.header ul {
+    list-style: none;
+    margin: 0;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.header ul li a {
+    text-decoration: none;
+    color: #f5f5f5;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.header ul li a:hover {
+    color: #ffb74d;
+}
+
+/* Hero Section */
+.journey-hero {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1c1c1c, #2c2c2c);
+    color: #FFF5E0;
+    text-align: center;
+    padding: 20px;
+}
+
+.journey-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.journey-hero .tagline {
+    font-size: 1.8rem;
+    font-style: italic;
+    color: #E4C59E;
+    margin-bottom: 20px;
+}
+
+/* Horizontal Timeline */
+.journey-horizontal-timeline {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0;
+    background: #2c2c2c;
+    border-bottom: 2px solid #E4C59E;
+}
+
+.year {
+    position: relative;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #FFF5E0;
+    cursor: pointer;
+    border: 2px solid #FFF5E0;
+    border-radius: 5px;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.year.active {
+    color: #1c1c1c;
+    background: #E4C59E;
+    transform: translateY(-5px);
+}
+
+.year:hover {
+    color: #E4C59E;
+    border-color: #E4C59E;
+}
+
+/* Vertical Timeline */
+.journey-vertical-timeline {
+    position: relative;
+    width: 20%;
+    margin-left: 5%;
+    margin-top: 1px; /* Lowered for better visibility */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.journey-vertical-timeline .line {
+    position: absolute;
+    width: 2px;
+    background: #E4C59E;
+    height: calc(100% - 30px); /* Ensures the line fits well */
+    z-index: 0;
+    left: 50%; /* Centers the line with the circles */
+}
+
+.journey-vertical-timeline .month {
+    position: relative;
+    margin: 25px 0; /* Better spacing between months */
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #1c1c1c;
+    border: 2px solid #E4C59E;
+    color: #FFF5E0;
+    text-align: center;
+    line-height: 80px;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.journey-vertical-timeline .month.active {
+    background: #E4C59E;
+    color: #1c1c1c;
+}
+
+/* Content Styling */
+.journey-vertical-timeline .content {
+    position: absolute;
+    left: 70%; /* Moves content further from the line */
+    width: 100%; /* Ensures proper width for text display */
+    font-size: 1rem;
+    line-height: 1rem;
+    color: #FFF5E0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.journey-vertical-timeline .content .event {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    margin: 10px -400px 15px 20px; 
+    white-space: normal;
+}
+
+.journey-vertical-timeline .content .event .emoji {
+    font-size: 1.5rem;
+}
+
+.journey-vertical-timeline .content .event .text {
+    width: auto;
+    word-break: break-word;
+}
+
+/* Footer Spacing */
+footer {
+    margin-top: 30px;
+    padding: 20px;
+    background: #1c1c1c;
+    color: #FFF5E0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+
+footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 0;
+    margin: 10px 0 0;
+}
+
+footer ul li {
+    display: inline-block;
+}
+
+footer ul li a {
+    color: #FFF5E0;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    color: #E4C59E; /* Add hover effect */
+}
+
+footer ul li a img {
+    width: 30px;
+    height: auto;
+    vertical-align: middle;
+}
+
+footer ul li a i {
+    font-size: 1.8rem; /* Adjust icon size */
+}
+
+/*Responsive elements*/
+@media (max-width: 768px) {
+    .header ul {
+        display: none; /* Hide menu by default on mobile */
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background: linear-gradient(90deg, #3b3b3b, #1e1e1e);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 10px 0;
+    }
+
+    .header ul.active {
+        display: flex; /* Show menu when active */
+    }
+
+    .header .menu-toggle {
+        display: block; /* Show toggle button on mobile */
+    }
+}
+
+/* For Mobile Devices (<= 768px) */
+@media (max-width: 768px) {
+    .journey-horizontal-timeline {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .journey-horizontal-timeline .year {
+        width: 90%;
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .journey-vertical-timeline {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .journey-vertical-timeline .month {
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        left: -30px; /* Adjust position */
+    }
+
+    .journey-vertical-timeline .content {
+        left: 10%;
+        width: 80%;
+        font-size: 1rem;
+        line-height: 1.4rem;
+        gap: 15px;
+    }
+
+    .journey-vertical-timeline .content .event {
+        font-size: 0.9rem;
+        line-height: 1.3rem;
+    }
+}
+
+/* For Tablets (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .journey-horizontal-timeline {
+        display: flex;
+        justify-content: space-around;
+        gap: 15px;
+    }
+
+    .journey-horizontal-timeline .year {
+        width: auto;
+        font-size: 1.1rem;
+    }
+
+    .journey-vertical-timeline {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .journey-vertical-timeline .month {
+        width: 70px;
+        height: 70px;
+        line-height: 70px;
+        left: -35px; /* Adjust position */
+    }
+
+    .journey-vertical-timeline .content {
+        left: 15%;
+        width: 75%;
+        font-size: 1.1rem;
+        line-height: 1.6rem;
+        gap: 18px;
+    }
+
+    .journey-vertical-timeline .content .event {
+        font-size: 1rem;
+        line-height: 1.4rem;
+    }
+}
+
+/* For Laptops (1025px to 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .journey-horizontal-timeline {
+        justify-content: space-evenly;
+        gap: 20px;
+    }
+
+    .journey-horizontal-timeline .year {
+        font-size: 1.2rem;
+    }
+
+    .journey-vertical-timeline .month {
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+    }
+
+    .journey-vertical-timeline .content {
+        left: 60%;
+        width: 70%;
+    }
+}
+
+/* For Large Screens (>= 1441px) */
+@media (min-width: 1441px) {
+    .journey-horizontal-timeline {
+        justify-content: space-around;
+        gap: 25px;
+    }
+
+    .journey-horizontal-timeline .year {
+        font-size: 1.4rem;
+    }
+
+    .journey-vertical-timeline .content {
+        left: 25%;
+        width: 65%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    footer ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    footer ul li a {
+        font-size: 1.2rem;
+    }
+}

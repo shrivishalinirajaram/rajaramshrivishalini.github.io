@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     const yearData = {
+    2025: [
+        { month: "February", content: "🏆 I Place Award for Oral presentation Oral presentation on “Functional Shifts of Toxin-Related Microbial Genes in Dental Caries” in the 2024 James S. and Janice I. Wefel Memorial Fund Graduate/Post-Doctoral Competition at the AADOCR Iowa Section Annual Meeting, University of IA, USA."}
+        ],
     2024: [
         { month: "January", content: "🎤 Raised $2,932.00 Chapter development grant for the student organization - Connecting science to society from National Science Policy Network for developing Research at UIowa - A comic series." },
         { month: "February", content: "🏆 I Place Award for Oral presentation with a monetary prize of $500 on “Multi-omics comparison of Oral Mycobiome” in the 2024 Graduate/Post-Doctoral Competition at the AADOCR Iowa Section Annual Meeting, University of Iowa, IA, USA." },
@@ -82,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const timeline = document.querySelector(".journey-vertical-timeline");
     const years = document.querySelectorAll(".journey-horizontal-timeline .year");
-    let activeYear = "2024";
+    let activeYear = "2025";
 
     function renderTimeline(year) {
         const months = [

@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     const yearData = {
     2025: [
-        { month: "February", content: "🏆 I Place Award for Oral presentation Oral presentation on “Functional Shifts of Toxin-Related Microbial Genes in Dental Caries” in the 2024 James S. and Janice I. Wefel Memorial Fund Graduate/Post-Doctoral Competition at the AADOCR Iowa Section Annual Meeting, University of IA, USA."}
+        { month: "February", content: "🏆 I Place Award for Oral presentation Oral presentation on “Functional Shifts of Toxin-Related Microbial Genes in Dental Caries” in the 2024 James S. and Janice I. Wefel Memorial Fund Graduate/Post-Doctoral Competition at the AADOCR Iowa Section Annual Meeting, University of IA, USA."},
+        { month: "March", content: "🎓 •	Selected for the 2 year fellowship on the  “ASM Future Leaders Mentorship Fellowship (FLMF) program” organized by the American Society for Microbiology. 🏆 2nd Place Award for Oral presentation on “Gene activity changes in oral bacteria during dental caries and treatment” in the Jakobsen Graduate Research Showcase 2025."}
         ],
     2024: [
         { month: "January", content: "🎤 Raised $2,932.00 Chapter development grant for the student organization - Connecting science to society from National Science Policy Network for developing Research at UIowa - A comic series." },

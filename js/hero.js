@@ -1,35 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const heroContent = document.querySelector('.hero-content');
     const nameElement = document.querySelector('.hero-name');
-    const roles = [
-        "PhD Candidate",
-        "Computational Biologist",
-        "Oral Microbiome Researcher",
-        "Computational Toxicologist",
-        "Science Communicator"
-    ];
+    const roleElement = document.querySelector('.hero-role');
 
-    let currentRoleIndex = 0;
-
-    // Typing effect for roles
-    function typeRole(role, index = 0) {
-        const roleElement = document.querySelector('.hero-role');
-        if (index < role.length) {
-            roleElement.textContent += role[index];
-            setTimeout(() => typeRole(role, index + 1), 100);
-        } else {
-            setTimeout(() => {
-                roleElement.textContent = '';
-                currentRoleIndex = (currentRoleIndex + 1) % roles.length;
-                typeRole(roles[currentRoleIndex]);
-            }, 1500);
-        }
-    }
-
-    // Start typing the first role
-    typeRole(roles[currentRoleIndex]);
-
-    // Typing effect for name with proper spacing and color
+    // 1. Typing animation for name (spaced and colored)
     function typeNameWithSpacingAndColor(name, element) {
         element.innerHTML = ''; // Clear existing content
         const words = name.split(' '); // Split the name into words
@@ -38,34 +12,45 @@ document.addEventListener('DOMContentLoaded', () => {
             const wordSpan = document.createElement('span');
             wordSpan.classList.add('word');
             wordSpan.style.display = 'inline-block';
-            wordSpan.style.marginRight = '15px'; // Add spacing between words
+            wordSpan.style.marginRight = '15px';
 
-            // Type each letter of the word
             [...word].forEach((char, charIndex) => {
                 const charSpan = document.createElement('span');
                 charSpan.textContent = char;
                 charSpan.style.display = 'inline-block';
                 charSpan.style.transition = 'opacity 0.3s ease, color 0.3s ease';
-                charSpan.style.opacity = '0'; // Start invisible
-                charSpan.style.color = '#FFF0DC'; // Base color
+                charSpan.style.opacity = '0';
+                charSpan.style.color = '#FFF0DC';
 
-                // Reveal each character sequentially with color transition
                 setTimeout(() => {
                     charSpan.style.opacity = '1';
                     charSpan.style.color = charIndex % 2 === 0 ? '#E4C59E' : '#FFF5E0';
-                }, (wordIndex * 300) + (charIndex * 100)); // Staggered typing for words
+                }, (wordIndex * 300) + (charIndex * 100));
 
                 wordSpan.appendChild(charSpan);
             });
 
-            element.appendChild(wordSpan); // Append each word
+            element.appendChild(wordSpan);
         });
     }
 
     // Apply typing effect for name
     typeNameWithSpacingAndColor("Shri Vishalini Rajaram", nameElement);
 
-    // Mouse parallax effect
+    // 2. Typing effect for roles in a single line
+    const allRoles = "PhD Candidate | Computational Biologist | Oral Microbiome Researcher | Computational Toxicologist | Science Communicator";
+    let i = 0;
+
+    function typeAllRoles() {
+        if (i < allRoles.length) {
+            roleElement.textContent += allRoles.charAt(i);
+            i++;
+            setTimeout(typeAllRoles, 30); // Speed of typing
+        }
+    }
+    typeAllRoles();
+
+    // 3. Mouse parallax effect
     const hero = document.querySelector('.hero');
     hero.addEventListener('mousemove', (e) => {
         const { clientX, clientY } = e;
@@ -81,18 +66,14 @@ document.addEventListener('DOMContentLoaded', () => {
         heroContent.style.transform = 'translate(0, 0)';
         heroContent.style.transition = 'transform 0.3s ease-in-out';
     });
-});
-document.addEventListener('DOMContentLoaded', () => {
-    // Hero section existing functionality (retain your original code here)
 
-    // Fade-in effect for contribution blocks
+    // 4. Fade-in effect for block sections
     const blocks = document.querySelectorAll('.block');
-
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('fade-in');
-                observer.unobserve(entry.target); // Trigger only once
+                observer.unobserve(entry.target);
             }
         });
     }, { threshold: 0.5 });
@@ -101,15 +82,15 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(block);
     });
 
-    // Smooth scroll effect for internal links (optional future feature)
+    // 5. Smooth scrolling for internal links
     const links = document.querySelectorAll('a[href^="#"]');
     links.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const target = document.querySelector(link.getAttribute('href'));
-            target.scrollIntoView({
-                behavior: 'smooth'
-            });
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
         });
     });
 });

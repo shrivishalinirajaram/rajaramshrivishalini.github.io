@@ -148,8 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const eventEl = document.createElement("div");
                 eventEl.className = "event";
                 eventEl.innerHTML = `
-                    <span class="emoji">${event.content.split(" ")[0]}</span>
-                    <span class="text">${event.content.slice(event.content.indexOf(" ") + 1)}</span>
+                    <span class="text">${event.content}</span>
                 `;
                 const monthPosition =
                     monthEl.getBoundingClientRect().top - timeline.getBoundingClientRect().top;

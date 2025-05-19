@@ -96,6 +96,36 @@ body {
     text-align: center;
 }
 
+/* Flex layout for first block */
+.intro-flex {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.intro-highlight {
+    flex: 1;
+    min-width: 300px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Full-width block for rest of the text */
+.intro-full {
+    text-align: justify;
+    padding: 2px 10px;
+    background: #f5f5f5; /* Light background */
+    color: #1c1c1c; /* Black text */
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.intro-full p {
+    margin-bottom: 10px;
+}
+
 .introduction .cta-buttons {
     margin-top: 20px;
     text-align: center;
@@ -117,11 +147,12 @@ body {
 }
 
 .profile-photo {
-    max-width: 200px;
-    border-radius: 50%;
-    margin: 20px auto;
-    display: block;
+    width: 600px;
+    height: auto;
+    margin-left: 15px;
+    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    object-fit: cover;
 }
 
 /* Blocks Section */
@@ -463,6 +494,19 @@ footer ul li a i {
 
     .hero-content .hero-role {
         font-size: 1.2rem;
+    }
+
+    .intro-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-photo-large {
+        width: 220px;
+    }
+
+    .intro-highlight, .intro-full {
+        width: 100%;
     }
 }
 

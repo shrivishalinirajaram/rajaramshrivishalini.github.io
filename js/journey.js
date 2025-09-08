@@ -63,9 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
 2018: [
         { month: "September", content: "Joined Master of Technology in Computational Biology at Anna University with a Master’s Student scholarship of INR 12,500/month ($150.00) from the Department of Biotechnology, Government of India." },
         { month: "July", content: "Cleared Pondicherry University entrance examination with a state rank of 2 and All India Ranking of 7 out of 44,000 students." },
-        { month: "February", content: "Attended two-day workshop on “Nanomaterials Characterization by Electron Microscopy” at Madurai Kamaraj University, Madurai." },
-        { month: "February", content: "Poster Presentation on “Identification of pathways to be targeted for diffuse type Gastric tumors with dysregulated Extracellular Matrix” at the 49th Aqua-Terr Annual Conference on Biological Sciences at Madurai Kamaraj University, Madurai." },
-        { month: "February", content: "Poster Presentation on “Functional genomic investigation of HNF4α mediated transcriptional regulation in gastric cancer” at the 49th Aqua-Terr Annual Conference on Biological Sciences at Madurai Kamaraj University, Madurai." }
+        { month: "February", content: "Attended two-day workshop on “Nanomaterials Characterization by Electron Microscopy” at Madurai Kamaraj University, Madurai;Poster Presentation on “Identification of pathways to be targeted for diffuse type Gastric tumors with dysregulated Extracellular Matrix” and “Functional genomic investigation of HNF4α mediated transcriptional regulation in gastric cancer” at the 49th Aqua-Terr Annual Conference on Biological Sciences at Madurai Kamaraj University, Madurai" },
     ],
     2017: [
         { month: "November", content: "Joined a research internship at [Dr. Kumerasan Ganesan’s lab](http://oncocellomics.org/index.php) on “Cancer Genetics.”" },
@@ -76,18 +74,14 @@ document.addEventListener("DOMContentLoaded", () => {
         { month: "September", content: "Joined [Dr. Pramod Shinde’s Lab](https://pramodshinde1.wixsite.com/naturalproduct) for Bachelor’s thesis research at Central Salt and Marine Chemicals Research Institute." },
         { month: "July", content: "Completed in-plant training on “Animal Biotechnology” at Kavin Bioresearch, Chennai (15 days)." },
         { month: "June", content: "Completed a one-month internship in Biotechnology-Concept marketing at Geomarine Biotechnologies Pvt. Ltd., Chennai." },
-        { month: "March", content: "Organized a two-day National-level workshop on “Conservation of Herbs and Herbal Medicines” at Bharath University, Chennai." },
-        { month: "March", content: "Completed in-plant training on “Recombinant DNA Technology” at Indo-American Hybrid Seeds Pvt. Ltd., Bangalore (15 days)." }
+        { month: "March", content: "Organized a two-day National-level workshop on “Conservation of Herbs and Herbal Medicines” at Bharath University, Chennai., Completed in-plant training on “Recombinant DNA Technology” at Indo-American Hybrid Seeds Pvt. Ltd., Bangalore (15 days)." }
     ],
 2015: [
         { month: "December", content: "In-plant training on “Molecular Biology Techniques” at Apex Biotechnology Training and Research Institute, Chennai (20 days)." },
         { month: "September", content: "One day workshop on “Nested PCR and its industrial applications” in Baba Clinical and Genomic Research Centre, Ticel Biopark, Chennai." },
         { month: "August", content: "Attended Symposium on Genetic Diseases: From Mendelian to Malignancies, Indian Institute of Technology (IIT-Madras), Chennai." },
-        { month: "March", content: "Organized National Conference on Biomolecular Engineering (NCBME- 2015), Bharath University, Chennai." },
-        { month: "March", content: "Attended an after-event 2 days workshop on **“DNA Barcoding.”**" },
-        { month: "March", content: "Engaged with [Dr. Harald zur Hausen](https://www.nobelprize.org/prizes/medicine/2008/hausen/facts/), the Nobel laureate who discovered the role of papilloma viruses in cervical cancer at the [Indian Genetics Congress](http://www.srmgenetics.info/2015/03/indian-genetics-congress-2015.html), SRM University, Chennai, India." },
-        { month: "February", content: "Oral Presentation on “Biosensors-Development Towards Biotechnology; Its Applications and Advantages” in 2nd National Conference On Sustainable Trends In Energy And Environmental Resources (STEER) at SSN College of Engineering, Chennai." },
-        { month: "February", content: "Oral Presentation on “Fenugreek-The Genetical Interest” in National Conference on Recent Advances in Applied Sciences at Chevalier T. Thomas Elizabeth College for Women, Chennai." },
+        { month: "March", content: "Organized National Conference on Biomolecular Engineering (NCBME- 2015), Bharath University, Chennai; Attended an after-event 2 days workshop on **“DNA Barcoding.”**;Engaged with [Dr. Harald zur Hausen](https://www.nobelprize.org/prizes/medicine/2008/hausen/facts/), the Nobel laureate who discovered the role of papilloma viruses in cervical cancer at the [Indian Genetics Congress](http://www.srmgenetics.info/2015/03/indian-genetics-congress-2015.html), SRM University, Chennai, India." },
+        { month: "February", content: "Oral Presentation on “Biosensors-Development Towards Biotechnology; Its Applications and Advantages” in 2nd National Conference On Sustainable Trends In Energy And Environmental Resources (STEER) at SSN College of Engineering, Chennai;Oral Presentation on “Fenugreek-The Genetical Interest” in National Conference on Recent Advances in Applied Sciences at Chevalier T. Thomas Elizabeth College for Women, Chennai." },
         { month: "January", content: "Poster Presentation on “Turmeric: An Innovative Research Element” in National Conference on Drug Carriers in Medicine and Biology at Bannari Amman Institute of Technology, Sathyamangalam." }
     ],
     2014: [
@@ -176,5 +170,6 @@ document.addEventListener("DOMContentLoaded", () => {
     renderTimeline(activeYear);
     updateYearHighlight(activeYear);
 });
+
 
 

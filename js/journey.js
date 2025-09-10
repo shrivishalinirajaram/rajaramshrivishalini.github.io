@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { month: "April", content: "Published a stage play and co-authored a comic book in Synthesis Journal ([more](https://rajaramshrivishalini.com/science.html)). Received $2,500.00 for James.S and Janice I. Wefel Memorial Award for dental caries (July 1, 2024 - December 31, 2025)." },
         { month: "May", content: "Served on the planning committee for the [International Student Graduation Celebration](https://multicultural.uiowa.edu/international-graduation) Spring 2024." },
         { month: "July", content: "Elected as the Vice President for Human Toxicology Student Advisory Committee (ToxSAC) and Treasurer for Connecting Science to Society (CSTS) student organizations." },
-        { month: "September", content: "Passed my comprehensive exam approved by 5 doctoral committee members and became a PhD Candidate." },
+        { month: "September", content: "Passed my comprehensive exam approved by 5 doctoral committee members and became a PhD Candidate."},
         { month: "October", content: "Poster Presentation on “Comprehensive evaluation of differential abundance methods for multi-omics oral microbiome data” at American Society of Microbiology - Conference on Rapid Applied Microbial Next-Generation Sequencing and Bioinformatic Pipelines (ASM NGS). Presented on “Investigating the Changes of Toxin-Related Gene Expression in the Oral Metatranscriptome of Dental Caries” in Central States – Midwest Regional Chapters of Society of Toxicology, 2024 Annual Meeting, AI tools in toxicology, Iowa City, IA, USA." },
         { month: "December", content: "Received [HAWK-AI level 1 certification](https://iiai.uiowa.edu/hawkai-level-1-enrollment) from the Iowa Institute of Artificial Intelligence." }
     ],
@@ -170,6 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderTimeline(activeYear);
     updateYearHighlight(activeYear);
 });
+
 
 
 

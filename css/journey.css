@@ -211,57 +211,98 @@ footer ul li a i {
     font-size: 1.8rem; /* Adjust icon size */
 }
 
-@media (max-width: 768px) {
+/* Mobile-only fixes: keep laptop layout untouched */
+@media (max-width: 600px) {
+
+    /* Slightly smaller base text on phones */
+    body {
+        font-size: 0.95rem;
+    }
+
+    .journey-hero {
+        padding: 90px 16px 32px; /* space under fixed header */
+        text-align: center;
+    }
+
     .journey-hero h1 {
-        font-size: 2.2rem;
+        font-size: 1.9rem;
     }
 
     .journey-hero .tagline {
-        font-size: 1.3rem;
-        padding: 0 10px;
+        font-size: 1.05rem;
     }
 
-    /* Horizontal year buttons: allow wrapping */
+    /* Let the horizontal year strip wrap instead of squishing */
     .journey-horizontal-timeline {
         flex-wrap: wrap;
-        gap: 10px;
-        padding: 15px;
+        gap: 8px;
+        padding: 12px 10px;
     }
 
     .year {
-        font-size: 1rem;
-        padding: 8px 12px;
+        font-size: 0.95rem;
+        padding: 6px 10px;
     }
 
-    /* Vertical timeline: simplify layout on mobile */
+    /* Vertical timeline: stop using absolute positioning on phones */
     .journey-vertical-timeline {
-        width: 90%;
-        margin: 20px auto;
+        position: static;
+        width: 100%;
+        margin: 24px auto 32px;
+        padding: 0 16px;
+        display: block;
         align-items: flex-start;
     }
 
+    /* Hide the vertical line on very small screens (prevents weird overlaps) */
     .journey-vertical-timeline .line {
-        left: 20px;
+        display: none;
     }
 
+    /* Month circles: just stack nicely */
     .journey-vertical-timeline .month {
-        width: 50px;
-        height: 50px;
-        line-height: 50px;
-        margin: 15px 0;
+        position: static;
+        margin: 8px auto;
+        width: 56px;
+        height: 56px;
+        font-size: 0.8rem;
     }
 
+    .journey-vertical-timeline .month span {
+        font-size: 0.75rem;
+    }
+
+    /* Content: remove absolute positioning and let it flow */
     .journey-vertical-timeline .content {
         position: static;
+        left: auto;
         width: 100%;
-        margin-top: 10px;
-        padding-left: 0;
+        margin-top: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        font-size: 0.95rem;
+        line-height: 1.3;
     }
 
     .journey-vertical-timeline .content .event {
         position: static;
-        margin: 8px 0;
-        white-space: normal;
+        display: flex;
+        align-items: flex-start;
+        padding: 8px 10px;
+        border-radius: 8px;
+        background: #2c2c2c;
+        border-left: 3px solid #E4C59E;
+    }
+
+    .journey-vertical-timeline .content .event .emoji {
+        font-size: 1.2rem;
+        margin-right: 8px;
+        flex-shrink: 0;
+    }
+
+    .journey-vertical-timeline .content .event .text {
+        width: 100%;
+        word-break: break-word;
     }
 }
-

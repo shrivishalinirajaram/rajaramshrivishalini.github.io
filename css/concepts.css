@@ -148,3 +148,25 @@ footer ul li a i {
     font-size: 1.8rem; /* Adjust icon size */
 }
 
+@media (max-width: 768px) {
+    .concepts-hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .concepts-hero p {
+        font-size: 1.2rem;
+        padding: 0 10px;
+    }
+
+    .bookshelf {
+        padding: 20px 15px;
+        gap: 15px;
+    }
+
+    .book {
+        width: 100%;
+        max-width: 340px;
+        margin: 0 auto;
+    }
+}
+
